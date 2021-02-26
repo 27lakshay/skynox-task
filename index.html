@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+        <link rel="stylesheet" href="/index.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="mainbody">
+                <div class="left">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <img class="responsive-img" src="/assets/image1-small.jpg" />
+                        </div>
+                        <div class="mySlides fade">
+                            <img class="responsive-img" src="/assets/image2-small.jpg" />
+                        </div>
+                        <div class="mySlides fade">
+                            <img class="responsive-img" src="/assets/image3-small.jpg" />
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br />
+                    <div class="thumbnail-container">
+                        <img class="thumbnail" src="/assets/image1-small.jpg" />
+                        <img class="thumbnail" src="/assets/image2-small.jpg" />
+                        <img class="thumbnail" src="/assets/image3-small.jpg" />
+                        <img class="thumbnail" src="/assets/image4-small.jpg" />
+                    </div>
+                </div>
+                <div class="right">
+                    <h2 class="item-title">Upholstered Sofa</h2>
+                    <h5 class="item-desc-short">
+                        Kyara Upholstered Standard Bed by Zipcode Design
+                    </h5>
+                    <p class="item-desc">
+                        Anchor your living room in sophisticated style and impeccable comfort with a
+                        single addition. Perfectly balancing wood accents with fabric upholstery.
+                    </p>
+                    <div class="review">
+                        <span class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="review-number">(5.0) review based on 250</span>
+                        <a class="review-submit-btn">Submit Review</a>
+                    </div>
+                    <span class="item-price">$567</span>
+                    <span class="delivery-dispatch"
+                        ><i class="fas fa-clock"></i>Dispatched in 7 working days</span
+                    >
+                    <span>
+                        <button class="btn">ADD TO CART</button>
+                        <button class="btn">ADD TO WISHLIST</button>
+                    </span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="bottom-card">
+                    <i class="fas fa-truck"></i>
+                    <span>
+                        <h5>Secure Payment</h5>
+                        <p>Don't worry, your money is in secure places.</p>
+                    </span>
+                </div>
+                <div class="bottom-card">
+                    <i class="fas fa-wallet"></i>
+                    <span>
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Home delivery $15. For free delivery order over $250</p>
+                    </span>
+                </div>
+                <div class="bottom-card">
+                    <i class="fas fa-undo"></i>
+                    <span>
+                        <h5>Return Policy</h5>
+                        <p>No hassle return policy</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides((slideIndex += n));
+            }
+
+            function currentSlide(n) {
+                showSlides((slideIndex = n));
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+            }
+        </script>
+    </body>
+</html>
